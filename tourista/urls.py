@@ -34,8 +34,9 @@ urlpatterns = [
          views.destination_delete, name='destination-delete'),
 ]
 
+#urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
+
 if settings.DEBUG:
-    '''Uncomment the next line to include your static files'''
-    # urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns+=static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
